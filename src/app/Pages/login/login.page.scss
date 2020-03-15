@@ -1,0 +1,18 @@
+ion-content {
+    //changed here background image fo login page. In scss we write --background for this.
+    --background: url('/assets/images/login.jpg');
+}
+
+.login-header {
+    color: white;
+}
+
+.input-parent ion-item {
+    //With reference of private div we can change the ion-item styles.
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.forgot-text {
+    color: red;
+}
