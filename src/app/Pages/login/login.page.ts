@@ -23,5 +23,9 @@ export class LoginPage implements OnInit {
  register() {
   this.router.navigate(['/register']);
 }
+//Forgot password Method for Routing to login from forgot password page
+ forgot_password() {
+  this.router.navigate(['/forgot-password']);
+}
 
 }
