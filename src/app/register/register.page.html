@@ -20,14 +20,33 @@
                 <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
               </ion-item>
               <ion-item>
+                <ion-input name="contact" type="contact" placeholder="contact" ngModel required></ion-input>
+              </ion-item>
+              <ion-item>
                 <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
               </ion-item>
               <ion-item>
-                <ion-input name="confirm" type="password" placeholder="Password again" ngModel required></ion-input>
+                <ion-input name="confirm" type="password" placeholder="Confirm password" ngModel required></ion-input>
               </ion-item>
             </div>
-            <div class="ion-padding-vertical">
-              <ion-button  size="large" type="submit"  expand="block">Register</ion-button>
+            <div class="ion-padding-vertical" >
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <div>
+                    </div>
+                  </ion-col>
+                  <ion-col>
+                    <div>
+                      <ion-button  size="medium" type="submit"  expand="block">submit</ion-button>
+                    </div>
+                  </ion-col>
+                  <ion-col>
+                    <div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
             </div>
           </ion-col>
         </ion-row>
