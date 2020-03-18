@@ -19,5 +19,9 @@ export class LoginPage implements OnInit {
   login() {
     this.router.navigate(['/home']);
   }
+ //Register Method for Routing to login from register
+ register() {
+  this.router.navigate(['/register']);
+}
 
 }
