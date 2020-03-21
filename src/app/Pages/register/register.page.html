@@ -1,5 +1,5 @@
 <ion-header >
-  <ion-toolbar>
+  <ion-toolbar class="new-background-color">
     <ion-title>Register </ion-title>
 
   <ion-buttons slot="start">
@@ -11,19 +11,19 @@
   <ion-content class="ion-padding"  color="default">
        <ion-row>
       <ion-col class="ion-text-center" size-sm="12">
-              <ion-item class="ion-margin-vertical">
+              <ion-item lines="none" class="ion-margin-vertical input-item">
                 <ion-input  name="name" type="text" placeholder="Name" ></ion-input>
               </ion-item>
-              <ion-item class="ion-margin-bottom">
+              <ion-item lines="none" class="ion-margin-bottom input-item">
                 <ion-input name="email" type="email" placeholder="your@email.com" ></ion-input>
               </ion-item>
-               <ion-item class="ion-margin-bottom">
+               <ion-item lines="none" class="ion-margin-bottom input-item">
                 <ion-input name="contact" type="number" placeholder="contact" ></ion-input>
               </ion-item>
-              <ion-item class="ion-margin-bottom"> 
+              <ion-item lines="none" class="ion-margin-bottom input-item"> 
                 <ion-input name="password" type="password" placeholder="Password" ></ion-input>
               </ion-item>
-              <ion-item class="ion-margin-bottom">
+              <ion-item lines="none" class="ion-margin-bottom input-item">
                 <ion-input name="confirm" type="Confirm password" placeholder="Confirm password" ></ion-input>
               </ion-item>
             </ion-col>
@@ -32,7 +32,7 @@
              <ion-row>
               <ion-col class="ion-text-start" size-sm="6">
             <div class="ion-padding-vertical">
-              <ion-button  size="medium" type="submit"  expand="block">submit</ion-button>
+              <button ion-button class="submitButton" type="submit">Submit</button>
             </div>
           </ion-col>
         </ion-row>
