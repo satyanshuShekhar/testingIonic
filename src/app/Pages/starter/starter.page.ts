@@ -11,7 +11,8 @@ export class StarterPage implements OnInit {
 
   ngOnInit() {}
 
-    starter() {
+    starter() 
+    {
       this.router.navigate(['/login']);
     
   }
