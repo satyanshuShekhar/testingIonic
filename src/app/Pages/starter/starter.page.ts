@@ -12,7 +12,7 @@ export class StarterPage implements OnInit {
   ngOnInit() {}
 
     starter() {
-      this.router.navigate(['/starter']);
+      this.router.navigate(['/login']);
     
   }
 }
