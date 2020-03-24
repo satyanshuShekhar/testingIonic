@@ -1,10 +1,43 @@
-<ion-content>
-  <ion-row>
-    <ion-col  >
-      <div class="input-padding-bottom">
-       <button  (click)="starter()" >START</button>
-      </div>
+<ion-content class="ion-padding">
+  <ion-row class="bottomView">
+    <ion-col size-sm="12">
+      <div>
+        <button class="submitButton"  (click)="starter()" >START</button>
+       </div>
     </ion-col>
+    
+    <!-- We can divide col by size-sm. Every col size have 12.-->
+
+    <!-- <ion-col size-sm="3">
+      <div>
+        <button class="submitButton"  (click)="starter()" >START</button>
+       </div>
+    </ion-col>
+    <ion-col size-sm="3">
+      <div>
+        <button class="submitButton"  (click)="starter()" >START</button>
+       </div>
+    </ion-col>
+    <ion-col size-sm="3">
+      <div>
+        <button class="submitButton"  (click)="starter()" >START</button>
+       </div>
+    </ion-col> -->
   </ion-row>
   
 </ion-content>
+
+<!-- We can add button in bottom by the help of ion-footer -->
+<!-- <ion-footer class="ion-padding">
+  <div>
+    <button class="submitButton"  (click)="starter()" >START</button>
+   </div>
+</ion-footer> -->
+
+<!-- 
+  >>size-xs="12" --- extra small
+  >>size-sm="12" --- small devices
+  >>size-md="12" --- medium devices
+  >>size-lg="12" --- large devices
+  >>size-xl="12" --- extra large devices
+ -->
