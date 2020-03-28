@@ -13,7 +13,8 @@
             <ion-item lines="none">
               <ion-label position="floating">Email</ion-label>
               <ion-input formControlName="email" type="email"></ion-input>
-            
+            </ion-item>
+          </div>
           
           <div class="error-container">
             <ng-container *ngFor="let validation of validationMessages.email">
@@ -25,14 +26,14 @@
               </div>
             </ng-container>
           </div>
-        </ion-item>
-      </div>
+       
 
           <div class="input-parent ion-padding-vertical">
             <ion-item lines="none">
               <ion-label position="floating">Password</ion-label>
               <ion-input formControlName="password" type="password"></ion-input>
-            
+            </ion-item>
+          </div>
 
  <!-- Validation Message For password -->
  <div class="error-container">
@@ -45,8 +46,7 @@
     </div>
   </ng-container>
 </div>
-</ion-item>
-</div>
+
 
 
           <ion-row>
