@@ -15,7 +15,6 @@ export class RegisterPage implements OnInit {
   //Taken a variable to define the FormGroup.
   registerForm: FormGroup;
   errorMessage: string;
-  buttonDisbled: boolean;
   registerData: any;
 
   validationMessages = {

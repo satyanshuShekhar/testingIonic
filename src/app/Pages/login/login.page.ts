@@ -50,19 +50,6 @@ export class LoginPage implements OnInit {
  
   };
 
-
-
-
-
-
-
-  //constructor(public router: Router) { }
-
-  //ngOnInit() {
-    // let userData = JSON.parse(localStorage.getItem("userData"));
-    // let email = userData.email;
-    // this.email = email;
-  //}
   constructor(private fb: FormBuilder, public router: Router, public toastController: ToastController) { 
     this.loginForm = this.fb.group({
     
@@ -92,7 +79,7 @@ export class LoginPage implements OnInit {
 
   async presentToast() {
     const toast = await this.toastController.create({
-      message: 'You have created your account successfully.',
+      message: 'Logged Successfully.',
       color: 'danger',
       duration: 2000
     });
@@ -100,7 +87,9 @@ export class LoginPage implements OnInit {
   }
 
   //Login Method for Routing to home from login
-  login() {
+  login(): void {
+    alert('Satyanshu')
+    console.log(this.loginForm.value)
     this.presentToast();
     this.router.navigate(['/home']);
   }
