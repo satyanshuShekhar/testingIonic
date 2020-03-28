@@ -1,9 +1,9 @@
 ion-content {
     //changed here background image fo register page. In scss we write --background for this.
-    --background: url('/assets/images/register.jpg');
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
+    --background: #eeeeee !important;
+    // background-position: center; 
+    // background-repeat: no-repeat; 
+    // background-size: cover; 
 }
 
 

@@ -8,11 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
+ email: any;
   //When we define public router: Router, Angular will create an object for Router class.
   constructor(public router: Router) { }
 
   ngOnInit() {
+    // let userData = JSON.parse(localStorage.getItem("userData"));
+    // let email = userData.email;
+    // this.email = email;
   }
 
   //Login Method for Routing to home from login
