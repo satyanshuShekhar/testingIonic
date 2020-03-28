@@ -23,7 +23,11 @@ const routes: Routes = [
   {
     path: 'starter',
     loadChildren: () => import('./Pages/starter/starter.module').then( m => m.StarterPageModule)
+  },  {
+    path: 'card-details',
+    loadChildren: () => import('./pages/card-details/card-details.module').then( m => m.CardDetailsPageModule)
   },
+
 
 
 ];

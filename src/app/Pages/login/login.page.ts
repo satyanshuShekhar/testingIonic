@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 //import router for navigation
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -8,18 +10,98 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
- email: any;
+ //email: any;
   //When we define public router: Router, Angular will create an object for Router class.
-  constructor(public router: Router) { }
+  loginForm: FormGroup;
+  errorMessage: string;
 
-  ngOnInit() {
+
+  validationMessages = {
+  
+    email: [
+      {
+        type: 'required',
+        message: ('Email field can`t blank')
+      },
+      {
+        type: 'pattern',
+        message: ('Please enter valid email.')
+      }
+    ],
+   
+    password: [
+      {
+        type: 'required',
+        message: ('password field can`t blank')
+      },
+      {
+        type: 'minLength',
+        message: ('Password should be min in 6 words.')
+      },
+      {
+        type: 'maxLength',
+        message: ('Password should be not more than in 12 words.')
+      },
+      {
+        type: 'pattern',
+        message: ('Your password must start with one uppercase, one lowercase, and one number')
+      }
+    ],
+ 
+  };
+
+
+
+
+
+
+
+  //constructor(public router: Router) { }
+
+  //ngOnInit() {
     // let userData = JSON.parse(localStorage.getItem("userData"));
     // let email = userData.email;
     // this.email = email;
+  //}
+  constructor(private fb: FormBuilder, public router: Router, public toastController: ToastController) { 
+    this.loginForm = this.fb.group({
+    
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.email,
+          Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')
+        ]
+      ],
+    
+      password: ['', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(12), 
+        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
+      ]],
+      
+    },
+    // {validator: MustMatch('password', 'confirmPassword')}
+    );
+  }
+
+  ngOnInit() {
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'You have created your account successfully.',
+      color: 'danger',
+      duration: 2000
+    });
+    toast.present();
   }
 
   //Login Method for Routing to home from login
   login() {
+    this.presentToast();
     this.router.navigate(['/home']);
   }
  //Register Method for Routing to login from register
