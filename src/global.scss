@@ -57,3 +57,18 @@
     border-radius: 7px;
     outline: none;
 }
+
+.error-container {
+    padding-bottom: 16px;
+    .error-message {
+      color: red;
+      font-size: 16px;
+      padding: 3px 4px;
+  
+      ion-icon {
+        // padding-inline-end: calc(var(--page-margin) / 2);
+        padding-right: 3px;
+        vertical-align: bottom;
+      }
+    }
+  }
