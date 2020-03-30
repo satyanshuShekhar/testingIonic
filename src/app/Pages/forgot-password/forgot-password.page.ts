@@ -29,7 +29,7 @@ export class ForgotPasswordPage  {
   }
   
 
-  ForgotPassword{
+  ForgotPassword(){
     this.presentAlert();
   }
 
