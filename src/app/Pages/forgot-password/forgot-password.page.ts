@@ -9,31 +9,20 @@ import { NavController, NavParams } from '@ionic/angular';
   styleUrls: ['./forgot-password.page.scss'],
 })
 
-export class ForgotPasswordPage  {
+export class ForgotPasswordPage implements OnInit  {
 
 
     
 
  
- constructor(public alertController: AlertController) {}
-
- async presentAlert() {
-   const alert = await this.alertController.create({
-     header: 'Alert',
-     subHeader: 'Subtitle',
-     message: 'This is an alert message.',
-     buttons: ['OK']
-  
-   });
-   await alert.present();
-  }
-  
-
-  ForgotPassword(){
-    this.presentAlert();
-  }
-
+ constructor() {}
+ ngOnInit() {
 }
+  
+}
+  
+
+
 
 
  

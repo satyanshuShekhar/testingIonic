@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //import router for navigation
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToastController } from '@ionic/angular';
+import { ToastController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -50,7 +50,20 @@ export class LoginPage implements OnInit {
  
   };
 
-  constructor(private fb: FormBuilder, public router: Router, public toastController: ToastController) { 
+
+
+
+
+
+
+  //constructor(public router: Router) { }
+
+  //ngOnInit() {
+    // let userData = JSON.parse(localStorage.getItem("userData"));
+    // let email = userData.email;
+    // this.email = email;
+  //}
+  constructor(private fb: FormBuilder, public router: Router, public toastController: ToastController, public alertController: AlertController) { 
     this.loginForm = this.fb.group({
     
       email: [
@@ -85,7 +98,18 @@ export class LoginPage implements OnInit {
     });
     toast.present();
   }
+  
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Forgot password',
+      message: 'change your password',
+      buttons: ['OK']
+   
+    });
+    await alert.present();
+   }
   //Login Method for Routing to home from login
   login():void {
     this.presentToast();
@@ -96,7 +120,8 @@ export class LoginPage implements OnInit {
   this.router.navigate(['/register']);
 }
 //Forgot password Method for Routing to login from forgot password page
- forgot_password() {
+ forgot_password():void {
+  this.presentAlert();
   this.router.navigate(['/forgot-password']);
 }
 
