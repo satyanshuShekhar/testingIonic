@@ -100,7 +100,7 @@ export class LoginPage implements OnInit {
   }
 
   //Login Method for Routing to home from login
-  login() {
+  login():void {
     this.presentToast();
     this.router.navigate(['/home']);
   }
