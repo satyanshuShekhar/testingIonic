@@ -87,9 +87,7 @@ export class LoginPage implements OnInit {
   }
 
   //Login Method for Routing to home from login
-  login(): void {
-    alert('Satyanshu')
-    console.log(this.loginForm.value)
+  login():void {
     this.presentToast();
     this.router.navigate(['/home']);
   }
