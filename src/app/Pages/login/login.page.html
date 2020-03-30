@@ -1,5 +1,5 @@
 <ion-content class="ion-padding">
-  <form (keyup.enter)="loginForm.valid && login()" (ngSubmit)="login()" [formGroup]="loginForm">
+  <form (keyup.enter)="loginForm.valid && submit()" (ngSubmit)="submit()" [formGroup]="loginForm">
     <ion-row>
       <ion-col class="ion-text-center" size-sm="12">
         <h1 class="login-header">Login</h1>
@@ -22,7 +22,7 @@
                     *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty && loginForm.get('email').touched)">
                     <span>{{ validation.message }}</span>
                   </div>
-                </div>
+                
               </div>
             </ng-container>
           </div>
