@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 //Added ToastController to use toast message.
 import { ToastController } from '@ionic/angular';
+import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
+import { DomSanitizer,SafeResourceUrl } from '@angular/platform-browser';
 
 
 @Component({
@@ -15,9 +17,16 @@ export class RegisterPage implements OnInit {
   //Taken a variable to define the FormGroup.
   registerForm: FormGroup;
   errorMessage: string;
-  registerData: any;
+  registerData: {};
+  photo: SafeResourceUrl;
 
   validationMessages = {
+    pic: [
+      {
+        type: 'required',
+        message: ('Profile pic required.')
+      }
+    ],
     userName: [
       {
         type: 'required',
@@ -82,8 +91,13 @@ export class RegisterPage implements OnInit {
     ]
   };
 
-  constructor(private fb: FormBuilder, public router: Router, public toastController: ToastController) { 
+  constructor(private fb: FormBuilder,
+     public router: Router,
+      public toastController: ToastController,
+      private sanitizer: DomSanitizer
+      ) { 
     this.registerForm = this.fb.group({
+      pic: ['', [Validators.required]],
       userName: ['',[Validators.required]],
       email: [
         '',
@@ -145,12 +159,26 @@ export class RegisterPage implements OnInit {
   submit(): void {
     this.registerData = this.registerForm.value;
     console.log(this.registerData);
-    if(this.registerData){
+    if(this.registerData && this.photo){
       localStorage.setItem("userData", JSON.stringify(this.registerData));
+     
       this.presentToast();
       this.router.navigate(['/login']);
     }
     
+  }
+
+  async takePicture() {
+    const image = await Plugins.Camera.getPhoto({
+      quality: 100,
+      allowEditing: false,
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Camera
+    });
+
+    this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
+    this.registerForm.patchValue({pic:this.photo});
+    localStorage.setItem("userPic", JSON.stringify(this.photo));
   }
 
 }

@@ -17,4 +17,8 @@ export class HomePage implements OnInit {
     this.router.navigate(['/card-details'])
   }
 
+  goToProfile() {
+    this.router.navigate(['/profile'])
+  }
+
 }

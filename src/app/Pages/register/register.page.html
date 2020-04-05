@@ -10,7 +10,31 @@
 
 <ion-content class="ion-padding" color="default">
   <form (keyup.enter)="registerForm.valid && submit()" (ngSubmit)="submit()" [formGroup]="registerForm">
-  <ion-row>
+    <ion-row>
+      <ion-col size-sm="12" class="ion-text-center ">
+          <div class="profilepic">
+            <img  *ngIf="photo" [src]="photo" />
+            <input type="hidden" formControlName="pic">
+            <img *ngIf="!photo" src="../../../assets/images/male.png" />
+            <ion-button class="addImg" (click)="takePicture()">
+              <ion-icon name="camera"></ion-icon>
+            </ion-button>
+          </div>
+           <!-- Validation Message For Name -->
+      <div class="error-container">
+        <ng-container *ngFor="let validation of validationMessages.userPic">
+          <div class="error-message">
+            <div
+              *ngIf="registerForm.get('userPic').hasError(validation.type) && (registerForm.get('userPic').dirty && registerForm.get('userPic').touched)">
+              <span>{{ validation.message }}</span>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+        
+      </ion-col>
+    </ion-row>
+    <ion-row>
     <ion-col class="ion-text-center" size-sm="12">
       <!-- Input field for name -->
       <ion-item lines="none" class="input-item">
