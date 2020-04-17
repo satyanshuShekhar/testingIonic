@@ -8,7 +8,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" >
+<!--<ion-content class="ion-padding" >
   
   <ion-slides pager="true" >
     <ion-slide>
@@ -21,7 +21,7 @@
       <img src='/assets/images/slide3.jpg'>
     </ion-slide>
   </ion-slides>
-  <!--first card-->
+  first card
   <ion-row>
   <ion-col  size-sm="6">
     <div>
@@ -50,7 +50,7 @@
   </div>
   </ion-col>
   </ion-row>
-  <!--second card-->
+  second card
   <ion-row>
     <ion-col  size-sm="6">
       <div>
@@ -79,4 +79,20 @@
     </div>
     </ion-col>
     </ion-row>
+</ion-content>-->
+<ion-content>
+  <ion-row>
+    <!--using data(used as form of array in ts file) in fo loop -->
+     <ion-col size-sm="6" *ngFor="let item of data"> 
+      <ion-card class="image_card">
+        <ion-card-header class="imagecard_header ion-text-center">
+          <img [src]="item.img">
+        </ion-card-header>
+        <ion-card-content class="ion-text-center">
+          <p class="imagedataFullName">{{item.FullTeamName}}</p>
+          <p class="teamShortName"s>{{item.ShortName}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col> 
+  </ion-row>
 </ion-content>

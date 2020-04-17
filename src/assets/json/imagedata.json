@@ -1,0 +1,16 @@
+{
+    "imagedata": [
+        {
+            "id" : 1,
+            "FullTeamName": "green world1",
+            "ShortName":"gworld1",
+            "img": "/assets/images/slide3.jpg"
+        },
+        {
+            "id":2,
+            "FullTeamName": "Nature image2",
+            "ShortName":"Nimg2",
+            "img": "/assets/images/slide2.jpg"
+        }
+    ]
+}
